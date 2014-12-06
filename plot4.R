@@ -20,21 +20,21 @@ allData <- read.csv("~/R_work/data/household_power_consumption.txt", header=T, s
 
 par(mfrow = c(2,2), mar=c(4,4,2,1),oma= c(0,0,2,0))
 with (subData, {
- 	plot(Global_active_power ~DateTime,type 	="1",ylab="Global Active Power(kilowatts)",xlab="")
+ 	plot(Global_active_power ~DateTime,type ="1",ylab="Global Active Power(kilowatts)",xlab="")
 
- 	plot(Voltage ~ DateTime, type="l", 	ylab="Voltage(volt)", xlab="")
+ 	plot(Voltage ~ DateTime, type="l", ylab="Voltage(volt)", xlab="")
 
- 	plot(Sub_metering_1 ~DateTime, type="l",ylab= 	"Global 	Active Power(kilowatts)", xlab="")
+ 	plot(Sub_metering_1 ~DateTime, type="l",ylab= "Global Active Power(kilowatts)", xlab="")
 
  	lines(Sub_metering_2 ~ DateTime, col= "Red")
  	lines(Sub_metering_3 ~ DateTime, col= "blue")
 
-  legendText= c(Sub_metering_1,Sub_metering_2, 	Sub_metering_3)
+        legendText= c(Sub_metering_1,Sub_metering_2, 	Sub_metering_3)
 
  	legend("topright", legendText, col=c("black", "red", "blue"), lty =c(1,1), lwd= c(2.5,2.5),
  	         cex=0.75, bty="n")
  
-	plot(Global_reactive_power ~DateTime, 	type="l",ylab="Global Reactive Power(kilowatts)", 	xlab= "")
+	plot(Global_reactive_power ~DateTime, type="l",ylab="Global Reactive Power(kilowatts)", xlab= "")
  })
 
 # Copy plot4 to a PNG file
